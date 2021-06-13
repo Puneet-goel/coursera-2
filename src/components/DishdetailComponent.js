@@ -35,7 +35,7 @@ function RenderComments({dish}){
         return(
             <div>
                 <h4>Comments</h4>
-                <ul class = "list-unstyled">
+                <ul className = "list-unstyled">
                     {x}
                 </ul>
             </div>  
