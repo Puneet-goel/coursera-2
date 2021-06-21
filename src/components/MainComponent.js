@@ -20,6 +20,7 @@ const mapStateToProps  = state => {
 
 class Main extends Component {
 
+  //eslint-disable-next-line
   constructor(props){
     super(props);
   }
