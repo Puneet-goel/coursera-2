@@ -1,11 +1,12 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, ModalHeader, ModalBody, Modal, Button, Label } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { LocalForm, Control, Errors } from 'react-redux-form'
 
 const required = (val) => val && val.length ;
-const minLength = (len) => (val) => !(val) || (val.length>=3);
-const maxLength = (len) => (val) => !(val) || (val.length<=15);
+const minLength = (len) => (val) => !(val) || (val.length>=len);
+const maxLength = (len) => (val) => !(val) || (val.length<=len);
 
 class CommentForm extends Component{
     constructor(props){
@@ -15,6 +16,7 @@ class CommentForm extends Component{
             isModalOpen : false
         }
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     toggleModal(){
@@ -23,15 +25,20 @@ class CommentForm extends Component{
         });
     };
 
+    handleSubmit(values){
+        console.log('Current State is: ' + JSON.stringify(values));
+        alert('Current State is: ' + JSON.stringify(values));
+    }
+
     render(){
         return (
             <div> 
                 <Button outline color="secondary" onClick={this.toggleModal} className="fa fa-pencil"> Submit Comment</Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader>Submit Comment</ModalHeader>
+                    <ModalHeader >Submit Comment</ModalHeader>
                     <ModalBody>
-                        <LocalForm>
-                            <Label htmlfor="rating" >Rating</Label>
+                        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                            <Label htmlFor="rating" >Rating</Label>
                             <Control.select model=".rating" name="rating" rows="6" className="col-xl">
                                 <option>1</option> 
                                 <option>2</option>
@@ -39,7 +46,7 @@ class CommentForm extends Component{
                                 <option>4</option>
                                 <option>5</option>
                             </Control.select> 
-                            <Label htmlfor="author" >Your Name</Label>
+                            <Label htmlFor="author" >Your Name</Label>
                             <Control.text model=".author" id="author" name="author" 
                                 placeholder="Your Name" 
                                 rows="6" 
@@ -60,8 +67,8 @@ class CommentForm extends Component{
                             />
                             <Label htmlFor="comment">Comment</Label> 
                             <Control.textarea model=".comment" id="comment" name="comment" rows="6" className="col-xl"/> <br/>
+                            <Button type="submit" color="primary" >Submit</Button>
                         </LocalForm>
-                        <Button color="primary" type="submit">Submit</Button>
                     </ModalBody>
                 </Modal>
             </div>

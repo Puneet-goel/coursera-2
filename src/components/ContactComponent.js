@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+/* eslint-disable */
 import { Breadcrumb, BreadcrumbItem, Row, Label, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-//eslint-disable-next-line
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length ;
