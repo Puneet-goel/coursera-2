@@ -1,4 +1,5 @@
 /* eslint-disable */
+import react,{ Component } from "react";
 import { Breadcrumb, BreadcrumbItem, Row, Label, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from 'react-redux-form';
