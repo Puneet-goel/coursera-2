@@ -1,0 +1,1 @@
+export const baseUrl = "https://hotel-json-server-react.herokuapp.com/";
