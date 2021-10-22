@@ -3,8 +3,8 @@
 # Hotel React Website
 React Application 
 
-Backend:
-https://hotel-json-server-react.herokuapp.com/
-
 Frontend:
-https://hotel-puneet.netlify.app/
+https://restaurant-puneet.netlify.app
+
+Backend:
+https://hotel-json-server-react.herokuapp.com
