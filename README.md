@@ -6,5 +6,5 @@ React Application
 Frontend:
 https://restaurant-puneet.netlify.app
 
-Backend:
-https://hotel-json-server-react.herokuapp.com
+Backend (Render):
+https://hotel-json-server-react.onrender.com
